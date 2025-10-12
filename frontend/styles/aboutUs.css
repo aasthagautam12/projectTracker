@@ -1,0 +1,91 @@
+:root {
+  /* Common colors */
+  --primary: #037896; /* main highlight / active color */
+  --bg-dark: #0f1115; /* dark background */
+  --bg-light: #fff; /* light background */
+  --fg-dark: #e6e7ea; /* dark foreground text */
+  --fg-light: #111; /* light foreground text */
+  --card-dark: #161a22; /* dark card background */
+  --card-light: #f7f7f7; /* light card background */
+  --muted-dark: #9aa0a6; /* dark muted text */
+  --muted-light: #666; /* light muted text */
+}
+
+/* Hero Section */
+.about-hero {
+  height: 50vh;
+  background: linear-gradient(180deg, #000, #0d0d0d);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  width: 200%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #0d6efd, transparent);
+  animation: moveLine 3s linear infinite;
+  box-shadow: 0 0 20px var(--primary);
+}
+
+/* Text Glow */
+.text-glow {
+  color: var(--primary);
+  text-shadow: 0 0 15px rgba(13, 110, 253, 0.8);
+}
+
+/* Cards */
+.about-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.1);
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(13, 110, 253, 0.3);
+}
+
+/* Fade In Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glowing line animation */
+@keyframes moveLine {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Footer glow line (reuse previous one) */
+.footer-glow-line {
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 20%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  animation: moveLine 3s linear infinite;
+  box-shadow: 0 0 20px var(--primary);
+}
+
+h4.text-primary.mb-3 {
+  color: #037896 !important;
+}
